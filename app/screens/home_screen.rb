@@ -1,12 +1,21 @@
 # @requires Layouts::HomeScreenLayout
 # @provides CC::HomeScreen
 module CC
-	class HomeScreen < PM::Screen
+	class HomeScreen < PM::TableScreen
 		title "Home"
-		def will_appear
-	    # We only want to create the views once. Here's an easy way:
-	    @layout = Layouts::HomeScreenLayout.new
-	    self.view = @layout.view	    
-	  end
+		def table_data
+			[{
+		    title: "Northwest States",
+		    cells: [
+		      { title: "Add Coupons", action: :add_coupons, arguments: { }},
+		      { title: "View Coupons", action: :view_coupons, arguments: { }}
+		    ]
+		  }]
+		end
+
+		def view_coupons(args={})
+			open CouponsList.new
+		end
+
 	end
 end

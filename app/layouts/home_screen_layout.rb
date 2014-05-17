@@ -27,7 +27,9 @@ module Layouts
       sizeToFit
       # this shorthand is much better!  More about frame helpers below.
       center ['50%', '50% + 50']
-      on(:touch) { PM.logger.info "Button touched!" }
+      on(:touch) {
+        PM.logger.info "Button touched!"
+      }
     end
   end
 end
