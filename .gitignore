@@ -1,4 +1,8 @@
+## build files to ignore
 build
+build/*
+*.o
+*.mm
 ## generic files to ignore
 *.lock
 *.DS_Store
