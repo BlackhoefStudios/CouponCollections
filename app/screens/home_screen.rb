@@ -1,20 +1,19 @@
-# @requires Layouts::HomeScreenLayout
 # @provides CC::HomeScreen
 module CC
 	class HomeScreen < PM::TableScreen
 		title "Home"
 		def table_data
 			[{
-		    title: "Northwest States",
+		    title: "Options",
 		    cells: [
 		      { title: "Add Coupons", action: :add_coupons, arguments: { }},
-		      { title: "View Coupons", action: :view_coupons, arguments: { }}
+		      { title: "View Coupons", action: :view_coupons}
 		    ]
 		  }]
 		end
 
-		def view_coupons(args={})
-			open CouponsList.new
+		def view_coupons()
+			open CouponsListScreen.new
 		end
 
 	end

@@ -1,8 +1,9 @@
-# @provides CC::CouponsList
+# @provides CC::CouponsListScreen
 # @requires CC::Coupon
+# @requires CC::ViewCouponScreen
 module CC
-	class CouponsList < PM::TableScreen
-		title "My Coupons"
+	class CouponsListScreen < PM::TableScreen
+		title "My Coupons"_
 
 		def table_data
 			[{
@@ -17,9 +18,7 @@ module CC
 		end
 		def view_coupon(args={})
 			item = args[:coupon]
-			PM.logger.info item.name
-			PM.logger.info item.priceOff
-			PM.logger.info item.requiredToBuy
+			open ViewCouponScreen.new(model: item, title: item.name)
 		end
 	end
 end

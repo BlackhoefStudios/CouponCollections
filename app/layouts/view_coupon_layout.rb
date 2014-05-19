@@ -1,10 +1,11 @@
 # @requires MotionKit::Layout
-# @provides Layouts::HomeScreenLayout
+# @provides Layouts::ViewCouponLayout
 module Layouts
-  class HomeScreenLayout < MotionKit::Layout
+  class ViewCouponLayout < MotionKit::Layout
+
   	def layout
-      add UILabel, :label
-      @button = add UIButton, :button
+      add UILabel, :
+      add UIButton, :button
     end
 
     def label_style
